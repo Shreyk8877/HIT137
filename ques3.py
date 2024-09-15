@@ -83,20 +83,21 @@ def encrypt(text: str, key: int):
 #     return decrypted_text
 
 def decrypt_char(char: str, key: int):
+    # if char is not an alphabet like _, #, %, this will remain as it is
     if not char.isalpha():
         return char
     
     # only come here if char is an alphabet
-    shifted = ord(char) - key
-    shifted_ignorecase = ord(char.lower()) - key
+    shifted = ord(char) - key # reversing the shifting operation that was performed with encrypt
+    shifted_ignorecase = ord(char.lower()) - key # converting the char to lower case and performing the above to avoid two if checks
     if shifted_ignorecase < ord('a'):
-        return chr(shifted + 26)
-    elif shifted_ignorecase > ord('z'):
-        return chr(shifted - 26)    
+        return chr(shifted + 26) # convert the shifted value back to character if its below the value for 'a'
     
+    # if the shifted character was already a character as well i.e. >= 'a'
     return chr(shifted)
 
 def decrypt(text: str, key: int):
+    # joining all the decrypted characters with the delimiter empty space ('')
     return ''.join([decrypt_char(char, key) for char in text])
 
 
