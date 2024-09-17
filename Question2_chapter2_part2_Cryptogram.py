@@ -1,3 +1,7 @@
+# QUESTION 2
+# CHAPTER 2: THE CHAMPER OF STRINGS
+# Part 2
+
 # List of common words in English
 common_words_list = ["the","a", "an", "there","that","and", "is", "am", "are", "in", "at", "on", "you", "he", "she", "it", "was", "were", "for"]
 
