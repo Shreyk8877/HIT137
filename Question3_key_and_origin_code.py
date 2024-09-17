@@ -1,3 +1,7 @@
+# QUESTION 3
+# Fixing the code, reveal the key and original code
+
+# Encrypted code provided 
 encrypted_code = """
 tybony_inevnoyr = 100
 zl_qvpg = {'xrl1': 'inyhr1', 'xrl2': 'inyhr2', 'xrl3': 'inyhr3'} 
@@ -41,7 +45,7 @@ cevag(tybony_inevnoyr)
 cevag (zl_qvpg)
 cevag (zl_frg)
 """
-
+# Decryption function to decrypt the ‘encrypted code’ to the original code
 def encrypt(text: str, key: int):
     encrypted_text = ""
     for char in text:
@@ -62,25 +66,6 @@ def encrypt(text: str, key: int):
             encrypted_text += char
     return encrypted_text
 
-# def decrypt_simple(text: str, key: int):
-#     decrypted_text = ""
-#     for char in text:
-#         if char.isalpha():
-#             shifted = ord(char) + key
-#             if char.islower():
-#                 if shifted > ord('z'):
-#                     shifted -= 26
-#                 elif shifted < ord('a'):        
-#                     shifted += 26
-#             elif char.isupper():
-#                 if shifted > ord('Z'):
-#                     shifted -= 26
-#                 elif shifted < ord('A'):
-#                     shifted += 26
-#             decrypted_text += chr(shifted)
-#         else:
-#             decrypted_text += char
-#     return decrypted_text
 
 def decrypt_char(char: str, key: int):
     # if char is not an alphabet like _, #, %, this will remain as it is
@@ -100,7 +85,7 @@ def decrypt(text: str, key: int):
     # joining all the decrypted characters with the delimiter empty space ('')
     return ''.join([decrypt_char(char, key) for char in text])
 
-
+# Function to find decryption key
 total = 0
 for i in range(5):
     for j in range(3):

@@ -1,4 +1,3 @@
-
 # Question 1
 # Task 3: Programming and Research
     # 3.2: Using the ‘Auto Tokenizer’ function in the ‘Transformers’ library,

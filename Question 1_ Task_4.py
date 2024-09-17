@@ -1,3 +1,7 @@
+# QUESTION 1
+# Task 4: Task 4: Named-Entity Recognition (NER)
+# Extract the ‘diseases’, and ‘drugs’ entities in the ‘.txt file’ separately using ‘en_core_sci_sm’/’en_ner_bc5cdr_md’
+
 import spacy
 import csv
 from collections import Counter

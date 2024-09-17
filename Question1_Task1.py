@@ -1,3 +1,6 @@
+# QUESTION 1
+# Extract the 'text' in all the CSV files and store them into a single '.txt file'.
+
 import pandas as pd
 
 def extract_text_from_csv_files(file_paths, output_file):
