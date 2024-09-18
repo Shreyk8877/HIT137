@@ -40,11 +40,11 @@ drugs_counts_bc5cdr = Counter()
 
 # Function to process chuncks and extract entities
 def extract_entities(model,counter_diseases, counter_drug, chunks):
-    for chunk in tqdm(chunbks, desc="Processing Chunks", unit="chunk"):
+    for chunk in tqdm(chunks, desc="Processing Chunks", unit="chunk"):
         doc = model(chunk)
  
     # Extract tokens and their entity types from the biomedical NER model output
-    tokens_entities = [(token.text, token.ent_type_) for token in doc_ents]
+    tokens_entities = [(token.text, token.ent_type_) for token in doc.ents]
  
     # Separate diseases and drugs
     diseases = [token[0] for token in tokens_entities if token[1] == 'DISEASE' or token[1] == 'DISEASES']
@@ -69,7 +69,7 @@ output_csv_file_path_sci = r'NEResult_sci.csv'
 output_csv_file_path_bc5cdr = r'NEResult_bc5cdr.csv'
 
 def save_results_to_csv(output_path, ordered_diseases, ordered_drugs):
-        with open(output_csv_file_path, 'w', newline='', encoding='utf-8') as csvfile:
+        with open(output_path, 'w', newline='', encoding='utf-8') as csvfile:
             csv_writer = csv.writer(csvfile)
             csv_writer.writerow(['Entity Type', 'Word', 'Count'])
  
